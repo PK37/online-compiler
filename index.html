@@ -1,0 +1,54 @@
+<!DOCTYPE html(lang='en')>
+<head>
+  <title>Question Editor</title>
+  <link href="../public/stylesheets/bootstrap.min.css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="../public/stylesheets/style.css" rel="stylesheet"/>
+    <style type="text/css" media="screen">
+    #editor {
+    height:100%;
+    }
+  </style>
+</head>
+<body style="overflow:hidden">
+  <div id="editor" class="col-md-8"></div>
+  <div id="result" class="col-md-4">
+    <div class="form-group">
+      <label></label>
+      <select id="languageSelector" onchange="changeLanguage()" name="lang" required="required" class="form-control languageSelector">
+        <option value="1">C </option>
+        <option value="2">C++ </option>
+        <option value="9">C# </option>
+        <option value="3">Java</option>
+        <option value="20">Javascript </option>
+        <option value="5">Python </option>
+      </select>
+    </div>
+    <div id="compile">
+      <div id="compileResponse">
+        <textarea placeholder="Provide your input here each seperated by a new line." class="customInput"></textarea>
+      </div>
+      <div id="compileButton">
+        <button class="compileButton">COMPILE & RU</button>
+      </div>
+    </div>
+    <div id="run">
+      <div id="runResponse"> </div>
+      <div id="submitButton">
+        <button disabled="disabled" class="submitButton">YOUR OUTPUT</button>
+      </div>
+    </div>
+    <div id="submit"></div>
+  </div>
+  <script src="../public/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.setFontSize(16);
+    editor.getSession().setMode("ace/mode/");
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../public/javascripts/bootstrap.min.js"></script>
+  <script src="../public/javascripts/jquery.js"></script>
+  <script src="../public/javascripts/compile.js"></script>
+</body>
